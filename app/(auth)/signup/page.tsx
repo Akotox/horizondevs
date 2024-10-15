@@ -1,9 +1,15 @@
 export const metadata = {
   title: "Sign Up - Open PRO",
-  description: "Page description",
+  description: "Join Horizon Developers for expert full-stack web development and custom software solutions. Transform your ideas into reality with our tailored web applications.",
+  keywords: "Horizon Developers, full-stack development, web applications, software solutions, sign up",
+  author: "Horizon Developers Team",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
+
 import Link from "next/link";
+
 
 export default function SignUp() {
   return (
