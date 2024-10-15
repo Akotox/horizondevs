@@ -21,7 +21,7 @@ export default function HeroHome() {
               data-aos="fade-up"
               data-aos-delay={200}
             >
-              At <strong style={{ color: '#1E90FF' }}>Horizon Developers</strong>, we specialize in full-stack development, delivering custom applications that elevate your business. Our team creates intuitive user interfaces and robust backends, providing innovative solutions tailored to your needs. Let’s bring your vision to life!
+              At <strong style={{ color: '#1E90FF' }}>Horizon Developers</strong>, we specialize in full-stack development, delivering services that elevate your business. Our team creates intuitive user interfaces and robust backends, providing innovative solutions tailored to your needs. Let’s bring your vision to life!
             </p>
               <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
@@ -55,7 +55,7 @@ export default function HeroHome() {
             thumbWidth={1104}
             thumbHeight={576}
             thumbAlt="Modal video thumbnail"
-            video="videos//video.mp4"
+            video="https://www.youtube.com/embed/1tfqpusIXwQ?autoplay=1&rel=0"
             // videoWidth={1920}
             // videoHeight={1080}
           />

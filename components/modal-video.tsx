@@ -127,7 +127,7 @@ export default function ModalVideo({
                     width: '90%',
                     height: '90%',
                   }}
-                  src="https://www.youtube.com/embed/1tfqpusIXwQ?autoplay=1&rel=0"
+                  src={video}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
