@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Horizon Developers",
-  description: "Full-stack development, web applications, software development, Horizon Developers",
+  description: "Horizon Developers: Specializing in full-stack web development and custom software solutions, we create efficient, user-friendly web applications tailored to your needs. Partner with us to turn your ideas into reality!",
   openGraph: {
     type: 'website',
     title: "Horizon Developers",
@@ -9,7 +9,7 @@ export const metadata = {
     siteName: "Horizon Developers",
     images: [
       {
-        url: "https://horizondevelopers.co.za",
+        url: "hhttps://firebasestorage.googleapis.com/v0/b/electro-523c1.appspot.com/o/features.png?alt=media&token=a456925b-fa96-4996-9eef-fb554800eb17",
         width: 800,
         height: 600,
         alt: "Description of the image",
@@ -21,7 +21,7 @@ export const metadata = {
     site: '@YourTwitterHandle',
     title: "Horizon Developers",
     description: "Page description",
-    image: "https://horizondevelopers.co.za/image.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/electro-523c1.appspot.com/o/features.png?alt=media&token=a456925b-fa96-4996-9eef-fb554800eb17",
   },
   canonical: "https://horizondevelopers.co.za",
   robots: "index, follow",
