@@ -94,9 +94,8 @@ export default function ModalVideo({
               </defs>
             </svg>
             <span className="text-sm font-medium leading-tight text-gray-300">
-              Watch Demo
-              <span className="text-gray-600"> - </span>
-              3:47
+              Watch Our Demos
+             
             </span>
           </span>
         </span>
@@ -110,9 +109,9 @@ export default function ModalVideo({
       >
         <DialogBackdrop
           transition
-          className="fixed inset-0 z-[99999] bg-black/70 transition-opacity duration-300 ease-out data-[closed]:opacity-0"
+          className="fixed inset-20 z-[99999] bg-black/70 transition-opacity duration-300 ease-out data-[closed]:opacity-0"
         />
-        <div className="fixed inset-0 z-[99999] flex px-4 py-6 sm:px-6">
+        <div className="fixed inset-20 z-[99999] flex px-4 py-6 sm:px-6">
           <div className="mx-auto flex h-full max-w-6xl items-center">
             <DialogPanel
               transition
@@ -123,12 +122,13 @@ export default function ModalVideo({
                     position: 'absolute',
                     top: 0,
                     left: 0,
-                    width: '70%',
-                    height: '70%',
+                    right: 0,
+                    bottom: 0,
+                    width: '90%',
+                    height: '90%',
                   }}
                   src="https://www.youtube.com/embed/1tfqpusIXwQ?autoplay=1&rel=0"
                   title="YouTube video player"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
