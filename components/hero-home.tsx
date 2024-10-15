@@ -16,13 +16,13 @@ export default function HeroHome() {
               Transforming Ideas into Digital Solutions
             </h1>
             <div className="mx-auto max-w-3xl">
-              <p
-                className="mb-8 text-xl text-indigo-200/65"
-                data-aos="fade-up"
-                data-aos-delay={200}
-              >
-                At Horizon Developers, we specialize in full-stack development, delivering custom applications that elevate your business. Our team creates intuitive user interfaces and robust backends, providing innovative solutions tailored to your needs. Let’s bring your vision to life!
-              </p>
+            <p
+              className="mb-8 text-xl text-indigo-200/65"
+              data-aos="fade-up"
+              data-aos-delay={200}
+            >
+              At <strong style={{ color: '#1E90FF' }}>Horizon Developers</strong>, we specialize in full-stack development, delivering custom applications that elevate your business. Our team creates intuitive user interfaces and robust backends, providing innovative solutions tailored to your needs. Let’s bring your vision to life!
+            </p>
               <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
                 <div data-aos="fade-up" data-aos-delay={400}>
                   <a
@@ -56,8 +56,8 @@ export default function HeroHome() {
             thumbHeight={576}
             thumbAlt="Modal video thumbnail"
             video="videos//video.mp4"
-            videoWidth={1920}
-            videoHeight={1080}
+            // videoWidth={1920}
+            // videoHeight={1080}
           />
         </div>
       </div>

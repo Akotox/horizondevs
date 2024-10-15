@@ -12,8 +12,8 @@ interface ModalVideoProps {
   thumbHeight: number;
   thumbAlt: string;
   video: string;
-  videoWidth: number;
-  videoHeight: number;
+  // videoWidth: number;
+  // videoHeight: number;
 }
 
 export default function ModalVideo({
@@ -22,8 +22,8 @@ export default function ModalVideo({
   thumbHeight,
   thumbAlt,
   video,
-  videoWidth,
-  videoHeight,
+  // videoWidth,
+  // videoHeight,
 }: ModalVideoProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -118,16 +118,20 @@ export default function ModalVideo({
               transition
               className="aspect-video max-h-full w-full overflow-hidden rounded-2xl bg-black shadow-2xl duration-300 ease-out data-[closed]:scale-95 data-[closed]:opacity-0"
             >
-              <video
-                ref={videoRef}
-                width={videoWidth}
-                height={videoHeight}
-                loop
-                controls
-              >
-                <source src={video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '70%',
+                    height: '70%',
+                  }}
+                  src="https://www.youtube.com/embed/1tfqpusIXwQ?autoplay=1&rel=0"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
             </DialogPanel>
           </div>
         </div>
