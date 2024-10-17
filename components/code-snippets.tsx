@@ -20,7 +20,7 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({
           language={language}
           style={dracula}
           wrapLines={true}
-          customStyle={{ fontSize: '10px', borderRadius: '8px' }} // Default font size
+          customStyle={{ fontSize: '13px', borderRadius: '8px' }} // Default font size
         >
           {code}
         </SyntaxHighlighter>
