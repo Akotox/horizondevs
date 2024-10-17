@@ -10,8 +10,51 @@ import {
 } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
+import CodeSnippet from "@/components/code-snippets";
 
 export default function BlogInfo() {
+    const exampleCode:string = `import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Simple Counter')),
+        body: Counter(),
+      ),
+    );
+  }
+}
+
+class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Count: $_count', style: TextStyle(fontSize: 24)),
+          SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () => setState(() => _count++),
+            child: Text('Increment'),
+          ),
+        ],
+      ),
+    );
+  }
+};`
+
   return (
     <motion.div
       className="text-neutral-50 "
@@ -123,6 +166,13 @@ export default function BlogInfo() {
             intended styles are applied to a given component, preventing the
             styles from being misplaced due to typography errors.
           </p>
+
+          <CodeSnippet 
+
+            code={exampleCode} 
+            language="dart" 
+            heading="Flutter Widget" // Set the heading here
+            />
 
           <p className="my-7">
             In this article, we’ll discuss what CSS Modules are, explore their
