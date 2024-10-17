@@ -24,7 +24,7 @@ export default function BlogTile({
     <Link href="blogs/[id]" as={`/blogs/${id}`}>
       <div className="flex flex-col md:flex-row bg-neutral-600/25 backdrop-blur-md rounded-lg p-2 md:p-4">
         {/* Image hidden on small screens */}
-        <div className="hidden md:block w-1/3">
+        <div className="hidden md:block w-1/4">
           <Image
             width={1000}
             height={1000}
@@ -43,7 +43,7 @@ export default function BlogTile({
             <span className="text-xs">{date}</span>
           </div>
           <p className="mt-2 text-gray-300">{excerpt}</p>
-          <div className="flex flex-wrap mt-2">
+          <div className="hidden md:block w-1/3flex flex-wrap mt-2 ">
             {tags.map((tag) => (
               <span
                 key={tag}
