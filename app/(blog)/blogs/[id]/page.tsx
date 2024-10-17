@@ -10,7 +10,7 @@ export default function BlogDetails({params} : {params: {id: string}}){
 
     return (
         <div className="max-w-[78rem] mx-auto ">
-            <div className=" gap-4 flex md:mt-5    flex-col md:flex-row  ">
+            <div className=" gap-4 flex md:mt-5 flex-col md:flex-row  ">
               <BlogLeft  author="" date=""  bio="" stack=""/>
               <BlogInfo />
               <BlogRight />

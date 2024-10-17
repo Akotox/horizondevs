@@ -30,9 +30,9 @@ export default function BlogInfo() {
       <div className="sticky top-5 ">
         <div className=" ">
           <div className="-mt-6   ">
-            <div className="bg-neutral-700/25 backdrop-blur-md h-10  w-full rounded-xl flex items-center gap-x-7 ">
+            <div className="bg-blue-600/30 backdrop-blur-md h-10  w-full rounded-xl flex items-center gap-x-7 ">
               <Link href={"/blogs"}>
-                <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center ml-3">
+                <div className="bg-blue-600/30 h-8 w-8 rounded-full flex items-center justify-center ml-3">
                   <div className="bg-neutral-300 rounded-full h-5 w-5 flex items-center justify-center">
                     <PiArrowLeftThin className="text-black text-lg" />
                   </div>
@@ -40,8 +40,20 @@ export default function BlogInfo() {
               </Link>
 
               <Link href={"/"}>
-                <button className="text-xs bg-neutral-700/25 p-1 w-16 h-6 rounded-md">
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
                   Home
+                </button>
+              </Link>
+
+              <Link href={"/projects"}>
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
+                  Projects
+                </button>
+              </Link>
+
+              <Link href={"/underconstruction"}>
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
+                  Tutorials
                 </button>
               </Link>
             </div>

@@ -30,9 +30,9 @@ export default function ProjectInfo() {
     >
       <div className="sticky top-5 ">
         <div className=" ">
-          <div className="-mt-6   ">
-            <div className="bg-neutral-700/25 backdrop-blur-md h-10  w-full rounded-xl flex items-center gap-x-7 ">
-              <Link href={"/"}>
+          <div className="-mt-6  sticky top-0 z-50 ">
+            <div className="bg-blue-600/30 backdrop-blur-md h-10 w-full rounded-xl flex items-center gap-x-7 ">
+              <Link href="/">
                 <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center ml-3">
                   <div className="bg-neutral-300 rounded-full h-5 w-5 flex items-center justify-center">
                     <PiArrowLeftThin className="text-black text-lg" />
@@ -40,9 +40,27 @@ export default function ProjectInfo() {
                 </div>
               </Link>
 
-              <Link href={"/"}>
-                <button className="text-xs bg-neutral-700/25 p-1 w-16 h-6 rounded-md">
+              <Link href="/">
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
                   Home
+                </button>
+              </Link>
+
+              <Link href="/blogs">
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
+                  Blog
+                </button>
+              </Link>
+
+              <Link href="/underconstruction">
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
+                  Tutorials
+                </button>
+              </Link>
+
+              <Link href="/underconstruction">
+                <button className="text-xs bg-blue-600/30 p-1 w-18 h-6 rounded-md items-center justify-center hover:bg-white hover:text-black">
+                  Templates
                 </button>
               </Link>
             </div>
@@ -77,15 +95,27 @@ export default function ProjectInfo() {
         </div>
 
         <div className="flex items-center gap-6 justify-center my-6">
-        <a href="#" aria-label="App Store" className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4">
-                    <PiAppStoreLogo className="w-6 h-6 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Google Play" className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4">
-                    <PiGooglePlayLogo className="w-6 h-6 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Chrome" className="flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                    <PiGoogleChromeLogo className="w-6 h-6 text-black hover:text-blue-600" />
-                </a>
+          <a
+            href="#"
+            aria-label="App Store"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4"
+          >
+            <PiAppStoreLogo className="w-6 h-6 text-black hover:text-blue-600" />
+          </a>
+          <a
+            href="#"
+            aria-label="Google Play"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4"
+          >
+            <PiGooglePlayLogo className="w-6 h-6 text-black hover:text-blue-600" />
+          </a>
+          <a
+            href="#"
+            aria-label="Chrome"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white"
+          >
+            <PiGoogleChromeLogo className="w-6 h-6 text-black hover:text-blue-600" />
+          </a>
         </div>
 
         <div className="my-11 font-medium">

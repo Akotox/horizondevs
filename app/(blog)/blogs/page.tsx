@@ -137,7 +137,7 @@ export default function BlogsList() {
           <Cta  title="Checkout out latest blogs and tech news" height={268}/>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           {blogs.map((blog) => (
                 <BlogTile
                     key={blog.id}
