@@ -130,30 +130,6 @@ class _CounterState extends State<Counter> {
           <span className="text-xs">Sunday, July 22, 2023</span>
         </div>
 
-        <div className="flex items-center gap-6 justify-center my-6">
-          <a
-            href="#"
-            aria-label="App Store"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4"
-          >
-            <PiAppStoreLogo className="w-6 h-6 text-black hover:text-blue-600" />
-          </a>
-          <a
-            href="#"
-            aria-label="Google Play"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white mr-4"
-          >
-            <PiGooglePlayLogo className="w-6 h-6 text-black hover:text-blue-600" />
-          </a>
-          <a
-            href="#"
-            aria-label="Chrome"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-white"
-          >
-            <PiGoogleChromeLogo className="w-6 h-6 text-black hover:text-blue-600" />
-          </a>
-        </div>
-
         <div className="my-11 font-medium">
           <Image
             width={1000}
