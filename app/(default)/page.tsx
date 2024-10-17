@@ -46,7 +46,7 @@ export default function Home() {
       <Features />
       <Workflows />
       <Testimonials />
-      <Cta />
+      <Cta  title="Reach out to discover tailored solutions that meet your needs and drive success." height={468}/>
       <ContactUs />
     </>
   );

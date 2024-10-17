@@ -1,5 +1,4 @@
 // pages/projects.tsx
-
 import React from 'react';
 import ImageCard from './image-card';
 import Link from 'next/link';
@@ -24,6 +23,7 @@ const Projects: React.FC = () => {
         <div className="max-w-6xl mx-auto px-5">
             <div className="columns-2 md:columns-4 gap-4 space-y-4">
                 {imageData.map(image => (
+                   
                     <ImageCard 
                         id={image.id}  // Pass id here
                         key={image.id} 
@@ -33,6 +33,8 @@ const Projects: React.FC = () => {
                         alt={image.alt} 
                         projectType={image.projectType} // Pass project type here
                     />
+                    
+                    
                 ))}
             </div>
             <div className="mt-6 text-right">
