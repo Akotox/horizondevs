@@ -1,0 +1,17 @@
+/* styles/CodeSnippet.module.css */
+
+.codeBlock {
+  font-size: 0.875rem; /* Base font size (14px) */
+}
+
+@media (min-width: 640px) { /* sm */
+  .codeBlock {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@media (min-width: 768px) { /* md */
+  .codeBlock {
+    font-size: 1.125rem; /* 18px */
+  }
+}

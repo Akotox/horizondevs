@@ -168,10 +168,9 @@ class _CounterState extends State<Counter> {
           </p>
 
           <CodeSnippet 
-
+            heading="zxcxvx"
             code={exampleCode} 
             language="dart" 
-            heading="Flutter Widget" // Set the heading here
             />
 
           <p className="my-7">
