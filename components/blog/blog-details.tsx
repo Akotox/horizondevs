@@ -13,6 +13,12 @@ import Image from "next/image";
 import CodeSnippet from "@/components/code-snippets";
 
 export default function BlogInfo() {
+  const images=[
+    "https://cruip-tutorials.vercel.app/masonry/masonry-01.jpg",
+    "https://cruip-tutorials.vercel.app/masonry/masonry-02.jpg",
+    "https://cruip-tutorials.vercel.app/masonry/masonry-03.jpg",
+    "https://cruip-tutorials.vercel.app/masonry/masonry-04.jpg",
+  ];
   const exampleCode: string = `import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -131,13 +137,13 @@ class _CounterState extends State<Counter> {
         </div>
 
         <div className="my-11 font-medium">
-          <Image
-            width={1000}
-            height={1000}
-            className="rounded-lg h-56 w-full object-cover"
-            src="/testimonial-07.jpg"
-            alt=""
-          />
+        <img 
+                className="w-full rounded-xl shadow " 
+                src={'https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg'} 
+                // width={1000} 
+                // height={1000} 
+                alt={"alt"} 
+            />
 
           <p className="my-7">
             One of the benefits of using TypeScript is that it significantly
@@ -166,12 +172,12 @@ class _CounterState extends State<Counter> {
           </p>
 
           <div className="my-9">
-            <Image
-              height={1000}
-              width={1000}
-              className="rounded-lg h-56 w-full object-cover"
-              src="/pic.jpg"
-              alt=""
+          <img 
+                className="w-full rounded-xl shadow " 
+                src={images[2]} 
+                // width={1000} 
+                // height={1000} 
+                alt={"alt"} 
             />
           </div>
 

@@ -11,8 +11,70 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import profile from "../public/images/testimonial-03.jpg";
 import Image from "next/image";
+import FeatureCard from "../feature-card";
 
 export default function ProjectInfo() {
+  const features = [
+    {
+      title: "User Authentication",
+      description:
+        "Secure login and registration options using email, social media, or phone number.",
+    },
+    {
+      title: "Product Catalog",
+      description:
+        "A visually appealing grid or list of products with images, descriptions, and prices.",
+    },
+    {
+      title: "Search Functionality",
+      description:
+        "Allows users to search for products by name, category, or tags.",
+    },
+    {
+      title: "Filters and Sorting",
+      description:
+        "Options to filter products by categories, prices, and ratings, and sort by popularity or price.",
+    },
+    {
+      title: "Shopping Cart",
+      description:
+        "A feature that enables users to add products to their cart and view their selections before checkout.",
+    },
+    {
+      title: "Wishlist",
+      description: "Users can save products they like for future purchase.",
+    },
+    {
+      title: "Product Details",
+      description:
+        "Detailed product pages with images, descriptions, specifications, and user reviews.",
+    },
+    {
+      title: "Checkout Process",
+      description:
+        "A smooth and secure checkout experience, including payment methods and shipping options.",
+    },
+    {
+      title: "Order Tracking",
+      description: "Users can track the status of their orders after purchase.",
+    },
+    {
+      title: "Push Notifications",
+      description:
+        "Notifications for order updates, promotions, and new arrivals.",
+    },
+    {
+      title: "User Profiles",
+      description:
+        "Users can manage their profiles, including personal information and order history.",
+    },
+    {
+      title: "Reviews and Ratings",
+      description:
+        "Customers can leave reviews and rate products, enhancing community trust.",
+    },
+  ];
+
   return (
     <motion.div
       className="text-neutral-50 "
@@ -119,13 +181,17 @@ export default function ProjectInfo() {
         </div>
 
         <div className="my-11 font-medium">
-          <Image
-            width={1000}
-            height={1000}
-            className="rounded-lg h-56 w-full object-cover"
-            src="/testimonial-07.jpg"
-            alt=""
+          <img
+            className="w-full rounded-xl shadow "
+            src={
+              "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
+            }
+            // width={1000}
+            // height={1000}
+            alt={"alt"}
           />
+
+          <h2 className="text-2xl font-extrabold my-5">App Architecture</h2>
 
           <p className="my-7">
             One of the benefits of using TypeScript is that it significantly
@@ -135,13 +201,13 @@ export default function ProjectInfo() {
             less on-call stress for developers.
           </p>
 
-          <p className="my-7">
-            With TypeScript, it’s easy to type our application’s business logic
-            and control flows, but what if we could make our CSS classes safe
-            too? Having the correct CSS class names in place ensures that the
-            intended styles are applied to a given component, preventing the
-            styles from being misplaced due to typography errors.
-          </p>
+          <h2 className="text-2xl font-extrabold my-5">Frontend Features</h2>
+
+          <div>
+          {features.map((feature, index) => (
+              <FeatureCard index={index+1} title={feature.title} description={feature.description} />
+            ))}
+          </div>
 
           <p className="my-7">
             In this article, we’ll discuss what CSS Modules are, explore their
@@ -150,83 +216,34 @@ export default function ProjectInfo() {
           </p>
 
           <div className="my-9">
-            <Image
-              height={1000}
-              width={1000}
-              className="rounded-lg h-56 w-full object-cover"
-              src="/pic.jpg"
-              alt=""
+            <img
+              className="w-full rounded-xl shadow "
+              src={
+                "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
+              }
+              // width={1000}
+              // height={1000}
+              alt={"alt"}
             />
           </div>
 
-          <h2 className="text-2xl font-extrabold">What are CSS Modules?</h2>
+          <h2 className="text-2xl font-extrabold my-5">Backend Features</h2>
 
-          <p className="my-4">
-            CSS Modules provide an approach to writing modular and scoped CSS
-            styles in modern web apps. These styles are specific to your
-            application’s particular component or module. You can write CSS
-            Modules by using regular CSS.
-          </p>
+          <div>
+          {features.map((feature, index) => (
+              <FeatureCard index={index+1} title={feature.title} description={feature.description} />
+            ))}
+          </div>
 
-          <p className="my-4">
-            At build time, with Vite or other similar tools, the CSS Modules
-            generate unique class names for each class defined in the CSS files.
-            The generated class names are then used in JavaScript to refer to
-            the CSS, thereby making the CSS modular and reusable without class
-            name conflicts or unnecessary duplications.
-          </p>
 
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Adding CSS Modules to your project
-          </h2>
+          <h2 className="text-2xl font-extrabold my-5">Upcoming Features</h2>
 
-          <p>
-            If you want to use CSS Modules in your next TypeScript app, you have
-            several options. Modern build tools like Vite and Snowpack support
-            CSS Modules out of the box, but you may need to include some minor
-            configurations if you’re using webpack. Once the build setup is
-            done, you can add CSS files with the module.css extension following
-            the CSS Modules convention:
-          </p>
+          <div>
+            {features.map((feature, index) => (
+              <FeatureCard index={index+1} title={feature.title} description={feature.description} />
+            ))}
+          </div>
 
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Developer experience improvements
-          </h2>
-
-          <p>
-            CSS Modules are a great tool, but since class names are generated at
-            runtime and change between builds, it’s hard to use them in a
-            type-safe way. You could manually create types for each CSS Module
-            using TypeScript definition files, but updating them is tedious.
-            Let’s suppose that a class name is added or removed from the CSS
-            Module. In that case, the types must be manually updated, otherwise,
-            the type safety won’t work as expected.
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Automatic typings
-          </h2>
-
-          <p>
-            In this case, the automation solution is straightforward. We’ll
-            generate the types automatically instead of manually, and we’ll
-            provide a script to verify that the generated types are up-to-date
-            to avoid incorrect CSS Module typings leaking into the compilation
-            step.
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">Conclusion:</h2>
-
-          <p>
-            Working within the TypeScript ecosystem has great potential, but,
-            when leaning too much on manual processes, it’s easy to blow trust
-            in the type-system or generate unnecessary friction. CSS Modules are
-            great, and with a little bit of extra configuration, its easy to add
-            type safety to the generated classes. You should automate the boring
-            stuff so that your team can focus on building a great products
-            instead. I hope you enjoyed this article, and be sure to leave a
-            comment below if you have questions. Happy coding!
-          </p>
         </div>
       </div>
     </motion.div>
