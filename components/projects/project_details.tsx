@@ -90,9 +90,9 @@ export default function ProjectInfo() {
         },
       }}
     >
-      <div className="sticky top-5 ">
+      <div className="top-5 ">
         <div className=" ">
-          <div className="-mt-6  sticky top-0 z-50 ">
+          <div className="mt-1">
             <div className="bg-blue-600/30 backdrop-blur-md h-10 w-full rounded-xl flex items-center gap-x-7 ">
               <Link href="/">
                 <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center ml-3">
@@ -181,13 +181,22 @@ export default function ProjectInfo() {
         </div>
 
         <div className="my-11 font-medium">
+
+        <h2 className="text-2xl font-extrabold my-5">App Description</h2>
+
+        <p className="my-7">
+          One of the benefits of using TypeScript is that it significantly
+          reduces the occurrence of specific bugs, like typos; it even makes
+          it easier to access prototype methods and perform refactoring. Bugs
+          caught at compile time make for more uptime, happier customers, and
+          less on-call stress for developers.
+        </p>
+
           <img
             className="w-full rounded-xl shadow "
             src={
               "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
             }
-            // width={1000}
-            // height={1000}
             alt={"alt"}
           />
 

@@ -4,9 +4,6 @@ import Link from "next/link";
 import React from "react";
 import {
   PiArrowLeftThin,
-  PiAppStoreLogo,
-  PiGooglePlayLogo,
-  PiGoogleChromeLogo,
 } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
@@ -76,9 +73,9 @@ class _CounterState extends State<Counter> {
         },
       }}
     >
-      <div className="sticky top-5 ">
+      <div className="">
         <div className=" ">
-          <div className="-mt-6   ">
+          <div className="mt-2   ">
             <div className="bg-blue-600/30 backdrop-blur-md h-10  w-full rounded-xl flex items-center gap-x-7 ">
               <Link href={"/blogs"}>
                 <div className="bg-blue-600/30 h-8 w-8 rounded-full flex items-center justify-center ml-3">
@@ -109,7 +106,7 @@ class _CounterState extends State<Counter> {
           </div>
         </div>
       </div>
-      <div className="  mt-9 w-full p-5 border border-neutral-900  backdrop-blur-md rounded-2xl h-full bg-transparent ">
+      <div className=" mt-9 w-full p-5 border border-neutral-900  backdrop-blur-md rounded-2xl h-full bg-transparent ">
         <motion.h1
           initial={{ x: 100, opacity: 0, filter: "blur(4px)" }}
           animate={{
@@ -140,8 +137,6 @@ class _CounterState extends State<Counter> {
         <img 
                 className="w-full rounded-xl shadow " 
                 src={'https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg'} 
-                // width={1000} 
-                // height={1000} 
                 alt={"alt"} 
             />
 

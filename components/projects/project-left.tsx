@@ -32,11 +32,11 @@ interface ProjectLeftProps {
           animate={{
             y: 0,
             opacity: 1,
-            transition: { duration: 0.3, type: "spring", stiffness: 200 },
+            transition: { duration: 0.3, type: "spring", stiffness: 175 },
           }}
-          className=" hidden md:block bg-[#1c1c1c00] w-full md:w-80  h-fit sticky top-5 "
+          className=" hidden md:block bg-[#1c1c1c00] w-full md:w-70  h-fit sticky top-5 "
         >
-          <div className=" md:w-80 w-full p-3 border border-neutral-800   rounded-2xl h-full bg-[#2121226b]  ">
+          <div className=" md:w-70 w-full p-3 border border-neutral-800   rounded-2xl h-full bg-[#2121226b]  ">
             <div className="flex">
               <div className="w-full relative">
                 <Image
@@ -108,19 +108,6 @@ interface ProjectLeftProps {
                 </div>
               </div>
   
-              <div className="border border-[#ffffff] text-neutral-300 my-6" />
-
-            <div className="flex justify-between">
-                <a href="#" aria-label="App Store" className="flex items-center justify-center w-16 h-16 rounded-full bg-white mr-4">
-                    <PiAppStoreLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Google Play" className="flex items-center justify-center w-16 h-16 rounded-full bg-white mr-4">
-                    <PiGooglePlayLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Chrome" className="flex items-center justify-center w-16 h-16 rounded-full bg-white">
-                    <PiGoogleChromeLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-            </div>
 
             </div>
           </div>
