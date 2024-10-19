@@ -38,14 +38,14 @@ export default function BlogRight() {
           </div>
         </div>
 
-        <div className="bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 text-neutral-50 ">
-          <Image
-            width={1000}
-            height={1000}
-            className="h-32 w-56 object-cover rounded-lg"
-            src="/game.jpg"
-            alt=""
-          />
+        <div className="bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 text-neutral-50 "><img
+                    className="h-32 w-56 object-cover rounded-lg"
+                    src={
+                      "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
+                    }
+                    alt={"alt"}
+                  />
+        
           <p className="my-3 font-medium text-sm">3D Games in Reactjs</p>
           <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium hover:bg-[#234ca5]">
             Get Now @20% OFF

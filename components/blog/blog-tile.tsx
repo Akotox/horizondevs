@@ -1,14 +1,15 @@
+import { formatDate } from "@/lib/utils/date-convertor";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 interface BlogTileProps {
-  id: number;
+  id: string;
   title: string;
   author: string;
   date: string;
-  excerpt: string;
+  headings: string;
   tags: string[];
-  profileImage: StaticImageData; // Adjust the type based on your image import
+  image: string; // Adjust the type based on your image import
 }
 
 export default function BlogTile({
@@ -16,9 +17,9 @@ export default function BlogTile({
   title,
   author,
   date,
-  excerpt,
+  headings,
   tags,
-  profileImage,
+  image,
 }: BlogTileProps) {
   return (
     <Link href="blogs/[id]" as={`/blogs/${id}`}>
@@ -27,9 +28,7 @@ export default function BlogTile({
         <div className="hidden md:block w-1/4">
         <img
                     className="w-24 h-24 rounded-lg shadow "
-                    src={
-                      "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
-                    }
+                    src={image}
                     alt={"alt"}
                   />
         </div>
@@ -40,9 +39,9 @@ export default function BlogTile({
               {author}
             </p>
             <div className="w-1 h-1 rounded-full bg-neutral-400" />
-            <span className="text-xs">{date}</span>
+            <span className="text-xs">{formatDate(date)}</span>
           </div>
-          {/* <p className="mt-2 text-gray-300">{excerpt}</p> */}
+          <p className="mt-2 text-gray-300">{headings}</p>
           <div className="hidden md:block w-1/3flex flex-wrap mt-2 ">
             {tags.map((tag) => (
               <span

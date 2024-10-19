@@ -9,94 +9,58 @@ import profile from '@/public/images/testimonial-03.jpg'
 import BlogTile from "@/components/blog/blog-tile";
 
 interface Blog {
-  id: number;
-  title: string;
-  author: string;
-  date: string;
-  tags: string[];
-  excerpt: string;
-  // image: StaticImageData; // Static image path
+  _id:       string;
+  title:     string;
+  author:    string;
+  date:      string;
+  tags:      string[];
+  image:     string;
+  headlines: string;
 }
 
 export default function BlogsList() {
   const blogs: Blog[] = [
     {
-      id: 1,
-      title: "Understanding React Hooks",
-      author: "John Doe",
-      date: "October 17, 2024",
-      tags: ["React", "JavaScript", "Web Development"],
-      // image: profile,
-      excerpt:
-        "Learn how to manage state and side effects in your React applications using hooks.",
+        "_id": "6713b8267c241aa444180edd",
+        "title": "Flutter REST API Caching with NoSQL Cache Manager",
+        "author": "Your Name",
+        "date": "2023-10-19T00:00:00.000Z",
+        "tags": [
+            "Flutter",
+            "API",
+            "Caching",
+            "NoSQL"
+        ],
+        "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
+        "headlines": "Learn how to implement caching in Flutter for better performance."
     },
     {
-      id: 2,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
+        "_id": "6713b9747c241aa444180eed",
+        "title": "Building Responsive UIs in Flutter",
+        "author": "Your Name",
+        "tags": [
+            "Flutter",
+            "Responsive Design",
+            "UI"
+        ],
+        "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
+        "headlines": "Learn how to create responsive UIs that adapt to screen sizes.",
+        "date": "2024-10-19T13:51:48.063Z"
     },
-
     {
-      id: 3,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
-    },
-
-    {
-      id: 4,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
-    },
-
-    {
-      id: 6,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
-    },
-
-    {
-      id: 8,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
-    },
-
-    {
-      id: 9,
-      title: "Getting Started with Node.js",
-      author: "Jane Smith",
-      date: "October 10, 2024",
-      tags: ["Node.js", "Backend", "JavaScript"],
-      // image: profile,
-      excerpt:
-        "An introduction to Node.js, its architecture, and building your first server.",
-    },
-    // Add more blog objects as needed
-  ];
+        "_id": "6713ba197c241aa444180efc",
+        "title": "State Management in Flutter with Provider",
+        "author": "Andre",
+        "tags": [
+            "Flutter",
+            "State Management",
+            "Provider"
+        ],
+        "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
+        "headlines": "Master state management in Flutter with the Provider package.",
+        "date": "2024-10-19T13:54:33.217Z"
+    }
+];
 
   return (
     <section className="p-4">
@@ -140,14 +104,14 @@ export default function BlogsList() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           {blogs.map((blog) => (
                 <BlogTile
-                    key={blog.id}
-                    id={blog.id}
+                    key={blog._id}
+                    id={blog._id}
                     title={blog.title}
                     author={blog.author}
                     date={blog.date}
-                    excerpt={blog.excerpt}
+                    headings={blog.headlines}
                     tags={blog.tags}
-                    profileImage={profile} // Use the static profile image or pass in dynamically
+                    image={blog.image} // Use the static profile image or pass in dynamically
                 />
                 ))}
           </div>

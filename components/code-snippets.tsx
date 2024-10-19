@@ -14,8 +14,8 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({
 }) => {
   return (
     <div className="bg-gray-900/25 rounded-lg ">
-      <h3 className="text-lg font-semibold text-white mb-2">{heading}</h3>
-      <div className="overflow-auto">
+      <h5 className="text-lg font-semibold py-2  text-gray-400">{heading}</h5>
+      <div className="overflow-auto mb-8">
         <SyntaxHighlighter
           language={language}
           style={dracula}

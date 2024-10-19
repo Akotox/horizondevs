@@ -2,21 +2,27 @@
 
 import Link from "next/link";
 import React from "react";
-import {
-  PiArrowLeftThin,
-} from "react-icons/pi";
+import { PiArrowLeftThin } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import CodeSnippet from "@/components/code-snippets";
+import { Blog } from "@/lib/interfaces/blog";
+import { formatDate } from "@/lib/utils/date-convertor";
+import { renderContent } from "./render-blog";
 
-export default function BlogInfo() {
-  const images=[
+interface BlogInfoProps {
+  data: Blog;
+}
+
+export default function BlogInfo({ data }: BlogInfoProps) {
+  const images = [
     "https://cruip-tutorials.vercel.app/masonry/masonry-01.jpg",
     "https://cruip-tutorials.vercel.app/masonry/masonry-02.jpg",
     "https://cruip-tutorials.vercel.app/masonry/masonry-03.jpg",
     "https://cruip-tutorials.vercel.app/masonry/masonry-04.jpg",
   ];
   const exampleCode: string = `import 'package:flutter/material.dart';
+import { renderContent } from './render-blog';
 
 void main() => runApp(MyApp());
 
@@ -123,127 +129,21 @@ class _CounterState extends State<Counter> {
           transition={{ delay: 0.4 }}
           className="text-3xl font-bold text-center "
         >
-          How to write type-safe CSS Modules
+          {data.title}
         </motion.h1>
         <div className="flex items-center gap-x-2 justify-center my-4">
           <p className="bg-[#282828] w-fit text-neutral-300 rounded-md px-2 h-5 flex items-center justify-center text-[10px] ">
-            TypeScript
+            {data.tags[0]}
           </p>
           <div className="w-1 h-1 rounded-full bg-neutral-400" />
-          <span className="text-xs">Sunday, July 22, 2023</span>
+          <span className="text-xs">{formatDate(data.date.toISOString())}</span>
         </div>
 
-        <div className="my-11 font-medium">
-        <img 
-                className="w-full rounded-xl shadow " 
-                src={'https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg'} 
-                alt={"alt"} 
-            />
+        <div className="my-11">
 
-          <p className="my-7">
-            One of the benefits of using TypeScript is that it significantly
-            reduces the occurrence of specific bugs, like typos; it even makes
-            it easier to access prototype methods and perform refactoring. Bugs
-            caught at compile time make for more uptime, happier customers, and
-            less on-call stress for developers.
-          </p>
-
-          <p className="my-7">
-            With TypeScript, it’s easy to type our application’s business logic
-            and control flows, but what if we could make our CSS classes safe
-            too? Having the correct CSS class names in place ensures that the
-            intended styles are applied to a given component, preventing the
-            styles from being misplaced due to typography errors.
-          </p>
-
-          <div className="hidden sm:block">
-            <CodeSnippet heading="zxcxvx" code={exampleCode} language="dart" />
+          <div>
+            {renderContent(data.content)}
           </div>
-
-          <p className="my-7">
-            In this article, we’ll discuss what CSS Modules are, explore their
-            developer experience shortcomings, and learn how to address them by
-            using automation with TypeScript. Let’s get started!
-          </p>
-
-          <div className="my-9">
-          <img 
-                className="w-full rounded-xl shadow " 
-                src={images[2]} 
-                // width={1000} 
-                // height={1000} 
-                alt={"alt"} 
-            />
-          </div>
-
-          <h2 className="text-2xl font-extrabold">What are CSS Modules?</h2>
-
-          <p className="my-4">
-            CSS Modules provide an approach to writing modular and scoped CSS
-            styles in modern web apps. These styles are specific to your
-            application’s particular component or module. You can write CSS
-            Modules by using regular CSS.
-          </p>
-
-          <p className="my-4">
-            At build time, with Vite or other similar tools, the CSS Modules
-            generate unique class names for each class defined in the CSS files.
-            The generated class names are then used in JavaScript to refer to
-            the CSS, thereby making the CSS modular and reusable without class
-            name conflicts or unnecessary duplications.
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Adding CSS Modules to your project
-          </h2>
-
-          <p>
-            If you want to use CSS Modules in your next TypeScript app, you have
-            several options. Modern build tools like Vite and Snowpack support
-            CSS Modules out of the box, but you may need to include some minor
-            configurations if you’re using webpack. Once the build setup is
-            done, you can add CSS files with the module.css extension following
-            the CSS Modules convention:
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Developer experience improvements
-          </h2>
-
-          <p>
-            CSS Modules are a great tool, but since class names are generated at
-            runtime and change between builds, it’s hard to use them in a
-            type-safe way. You could manually create types for each CSS Module
-            using TypeScript definition files, but updating them is tedious.
-            Let’s suppose that a class name is added or removed from the CSS
-            Module. In that case, the types must be manually updated, otherwise,
-            the type safety won’t work as expected.
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">
-            Automatic typings
-          </h2>
-
-          <p>
-            In this case, the automation solution is straightforward. We’ll
-            generate the types automatically instead of manually, and we’ll
-            provide a script to verify that the generated types are up-to-date
-            to avoid incorrect CSS Module typings leaking into the compilation
-            step.
-          </p>
-
-          <h2 className="text-2xl font-RubikExtraBold my-5">Conclusion:</h2>
-
-          <p>
-            Working within the TypeScript ecosystem has great potential, but,
-            when leaning too much on manual processes, it’s easy to blow trust
-            in the type-system or generate unnecessary friction. CSS Modules are
-            great, and with a little bit of extra configuration, its easy to add
-            type safety to the generated classes. You should automate the boring
-            stuff so that your team can focus on building a great products
-            instead. I hope you enjoyed this article, and be sure to leave a
-            comment below if you have questions. Happy coding!
-          </p>
         </div>
       </div>
     </motion.div>

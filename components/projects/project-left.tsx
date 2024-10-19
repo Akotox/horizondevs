@@ -39,6 +39,7 @@ interface ProjectLeftProps {
           <div className=" md:w-70 w-full p-3 border border-neutral-800   rounded-2xl h-full bg-[#2121226b]  ">
             <div className="flex">
               <div className="w-full relative">
+                
                 <Image
                   width={1000}
                   height={1000}
