@@ -10,24 +10,26 @@ export const renderContent = (content: Content[]) => {
             case ContentType.Code:
                 return (
                     <CodeSnippet 
-                        key={index} 
+                        key={item.id} 
                         heading={item.heading|| "This is the code"} // Assuming you have a heading property for the CodeSnippet
                         code={item.content} // Use the content property for code
                         language={item.lang} // Assuming lang is part of the item
+                        imageUrl={item.imageUrl}
                     />
                 );
             case ContentType.Heading:
                 return (
-                    <Heading key={index} text={item.content} />
+                    <Heading key={item.id} text={item.content} />
                 );
             case ContentType.PG:
                 return (
-                    <Paragraph key={index} content={item.content} />
+                    <Paragraph key={item.id} content={item.content} />
                 );
             case ContentType.Image:
                 return (
                     <ImageDisplay 
-                        key={index} 
+
+                        key={item.id} 
                         src={item.imageUrl!} // Ensure you handle the optional image property
                     />
                 );

@@ -15,12 +15,7 @@ interface BlogInfoProps {
 }
 
 export default function BlogInfo({ data }: BlogInfoProps) {
-  const images = [
-    "https://cruip-tutorials.vercel.app/masonry/masonry-01.jpg",
-    "https://cruip-tutorials.vercel.app/masonry/masonry-02.jpg",
-    "https://cruip-tutorials.vercel.app/masonry/masonry-03.jpg",
-    "https://cruip-tutorials.vercel.app/masonry/masonry-04.jpg",
-  ];
+ 
   const exampleCode: string = `import 'package:flutter/material.dart';
 import { renderContent } from './render-blog';
 

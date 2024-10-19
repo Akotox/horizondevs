@@ -31,7 +31,7 @@ export default function BlogDetails({ params }: { params: { id: string } }) {
             "content": "import 'package:flutter_cache_manager/flutter_cache_manager.dart';",
             "lang": "dart",
             "heading": "Install the package",
-            "imageUrl": "http://flutter",
+            "imageUrl": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
             "_id": "6713b8267c241aa444180ee0"
         },
         {
@@ -47,7 +47,8 @@ export default function BlogDetails({ params }: { params: { id: string } }) {
         {
             "contentType": "code",
             "content": "class MyCustomCacheManager extends BaseCacheManager {\n  static const key = 'customCache';\n\n  MyCustomCacheManager() : super(key, maxNrOfCacheObjects: 100);\n}",
-            "_id": "6713b8267c241aa444180ee3"
+            "_id": "6713b8267c241aa444180ee3",
+            "imageUrl": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
         },
         {
             "contentType": "heading",
@@ -62,7 +63,8 @@ export default function BlogDetails({ params }: { params: { id: string } }) {
         {
             "contentType": "code",
             "content": "final manager = MyCustomCacheManager();",
-            "_id": "6713b8267c241aa444180ee6"
+            "_id": "6713b8267c241aa444180ee6",
+            "imageUrl": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
         },
         {
           "contentType": "image",
