@@ -1,13 +1,13 @@
 'use client'
 
-import Image, { StaticImageData } from "next/image";
 import { PiArrowLeftThin } from "react-icons/pi";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Cta from "@/components/cta";
-import profile from '@/public/images/testimonial-03.jpg'
 import BlogTile from "@/components/blog/blog-tile";
+import { notFound } from 'next/navigation'
 
+const BASEURL = "https://horizondevelopers.co.za";
 interface Blog {
   _id:       string;
   title:     string;
@@ -18,49 +18,83 @@ interface Blog {
   headlines: string;
 }
 
+ 
+async function getBlogs() {
+  let res = await fetch(`${BASEURL}/api/blogs/all`)
+  const blogs: Blog[] = await res.json();
+  
+  
+  if (!blogs || blogs.length === 0) {
+    notFound(); // Handle the case where no blogs are found
+  }
+
+  return blogs
+}
+ 
+// export async function generateStaticParams() {
+//   let posts = await fetch('https://api.vercel.app/blog').then((res) =>
+//     res.json()
+//   )
+ 
+//   return posts.map((post: Blog) => ({
+//     id: post.id,
+//   }))
+// }
+ 
+// export async function generateMetadata({ params }: { params: { id: string } }) {
+//   let post = await getBlog(params.id)
+ 
+//   return {
+//     title: post.title,
+//   }
+// }
+
+
 export default function BlogsList() {
   const blogs: Blog[] = [
     {
-        "_id": "6713b8267c241aa444180edd",
-        "title": "Flutter REST API Caching with NoSQL Cache Manager",
-        "author": "Your Name",
-        "date": "2023-10-19T00:00:00.000Z",
+        "_id": "67149523be816f00b5d0a5f0",
+        "title": "Building Responsive UI in Flutter",
+        "author": "Andre",
         "tags": [
             "Flutter",
-            "API",
-            "Caching",
-            "NoSQL"
+            "Responsive UI",
+            "Layout",
+            "MediaQuery"
         ],
         "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
-        "headlines": "Learn how to implement caching in Flutter for better performance."
+        "headlines": "Master responsive design techniques in Flutter for a better user experience.",
+        "date": "2024-10-20T05:29:07.542Z"
     },
     {
-        "_id": "6713b9747c241aa444180eed",
-        "title": "Building Responsive UIs in Flutter",
-        "author": "Your Name",
-        "tags": [
-            "Flutter",
-            "Responsive Design",
-            "UI"
-        ],
-        "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
-        "headlines": "Learn how to create responsive UIs that adapt to screen sizes.",
-        "date": "2024-10-19T13:51:48.063Z"
-    },
-    {
-        "_id": "6713ba197c241aa444180efc",
-        "title": "State Management in Flutter with Provider",
+        "_id": "6714a6120c261d2ae529bfb3",
+        "title": "State Management in Flutter: An Overview",
         "author": "Andre",
         "tags": [
             "Flutter",
             "State Management",
-            "Provider"
+            "Provider",
+            "Riverpod"
         ],
         "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
-        "headlines": "Master state management in Flutter with the Provider package.",
-        "date": "2024-10-19T13:54:33.217Z"
+        "headlines": "Explore various state management solutions to enhance your Flutter applications.",
+        "date": "2024-10-20T06:41:22.019Z"
+    },
+    {
+        "_id": "6714a7000c261d2ae529bfc8",
+        "title": "Creating a Multi-Module Django App",
+        "author": "Your Name",
+        "tags": [
+            "Django",
+            "Web Development",
+            "Multi-Module",
+            "Python"
+        ],
+        "image": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg",
+        "headlines": "Learn how to create a multi-module Django application from scratch.",
+        "date": "2024-10-20T06:45:20.753Z"
     }
-];
+]
 
   return (
     <section className="p-4">

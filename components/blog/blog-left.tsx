@@ -9,7 +9,6 @@ interface ProjectLeftProps {
   author: string;
   email: string;
   website: string;
-  date: string;
   repo: string;
   image: string;
   stack: string[];
@@ -17,7 +16,6 @@ interface ProjectLeftProps {
 
 export default function BlogLeft({
   author,
-  date,
   repo,
   stack,
   email,
@@ -55,18 +53,7 @@ export default function BlogLeft({
                 🌍 {website}
               </p>
 
-              <div className="flex w-full   ">
-                <div className="flex gap-x-1  text-xs my-4">
-                  {stack.map((item, index) => (
-                    <p
-                      key={index}
-                      className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold"
-                    >
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </div>
+              
             </div>
 
             <div className="flex gap-x-1 w-full h-fit">
@@ -79,7 +66,7 @@ export default function BlogLeft({
           </div>
 
           <div className="w-full mt-5 text-neutral-300">
-           <Link href={"/"}>
+           <Link href={repo}>
            <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium hover:bg-[#234ca5]">
               Github Code
             </button>

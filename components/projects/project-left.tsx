@@ -49,7 +49,7 @@ interface ProjectLeftProps {
                 />
                 
                 <h1 className="font-bold text-xl  text-neutral-300 mt-3">
-                  Joscript Brown
+                  {author}
                 </h1>
                 <p className="text-xs font-medium text-neutral-300 mt-2">
                 📧  info@horizondevelopers.co.za 

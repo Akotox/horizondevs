@@ -4,7 +4,7 @@ import ImageCard from './image-card';
 import Link from 'next/link';
 
 const imageData = [
-    { id: "1", url: "https://cruip-tutorials.vercel.app/masonry/masonry-01.jpg", height: 290, width: 232, alt: "Image 01", projectType: "Web App" },
+    { id: "67149523be816f00b5d0a5f0", url: "https://cruip-tutorials.vercel.app/masonry/masonry-01.jpg", height: 290, width: 232, alt: "Image 01", projectType: "Web App" },
     { id: "2", url: "https://cruip-tutorials.vercel.app/masonry/masonry-02.jpg", height: 290, width: 232, alt: "Image 02", projectType: "E-wallet" },
     { id: "3", url: "https://cruip-tutorials.vercel.app/masonry/masonry-03.jpg", height: 174, width: 232, alt: "Image 03", projectType: "UI Design" },
     { id: "4", url: "https://cruip-tutorials.vercel.app/masonry/masonry-04.jpg", height: 155, width: 232, alt: "Image 04", projectType: "E-commerce" },

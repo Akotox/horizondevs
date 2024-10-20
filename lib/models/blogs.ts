@@ -18,16 +18,18 @@ interface IContentItem {
   lang: string; // Optional language
 }
 
-// Define the related item interface
+
 interface IRelatedItem {
-  title: string; // Title of the related item
-  id: string; // ID of the related item
+  title:     string;
+  relatedID: string;
+  url?:      string;
+  imageUrl?: string;
 }
 
 // Define the suggested course interface
 interface ISuggestedCourse {
   title: string; // Title of the suggested course
-  id: string; // ID of the suggested course
+  relatedID: string; // ID of the suggested course
   url: string; // URL link to the suggested course
   imageUrl?: string; // URL link to the suggested course
 }
@@ -60,13 +62,16 @@ const ContentItemSchema = new Schema<IContentItem>({
 
 const RelatedItemSchema = new Schema<IRelatedItem>({
   title: { type: String, required: true },
-  id: { type: String, required: true },
+  relatedID: { type: String, required: true },
+  url: { type: String, required: false }, // URL link for the suggested course
+  imageUrl: { type: String, required: false },
 });
 
 const SuggestedCourseSchema = new Schema<ISuggestedCourse>({
   title: { type: String, required: true },
-  id: { type: String, required: true },
+  relatedID: { type: String, required: true },
   url: { type: String, required: true }, // URL link for the suggested course
+  imageUrl: { type: String, required: false },
 });
 
 const BlogPostSchema = new Schema<IBlogPost>(
