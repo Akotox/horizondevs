@@ -23,10 +23,10 @@ export default async function ProjectDetails({ params }: { params: { id: string 
       <div className=" gap-4 flex md:mt-5    flex-col md:flex-row  ">
         
         <div className="hidden lg:block lg:w-1/3">
-          <ProjectLeft title={project.title} date="" bio="" stack={project.technologies} imageUrl={project.appLogo}/>
+          <ProjectLeft title={project.title} stack={project.technologies} imageUrl={project.appLogo} download={project.downloads}/>
         </div>
 
-        <ProjectInfo />
+        <ProjectInfo data={project}/>
         <ProjectRight />
       </div>
     </div>

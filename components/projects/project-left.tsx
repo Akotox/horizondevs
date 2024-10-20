@@ -4,27 +4,21 @@ import {
   PiMagicWandThin,
   PiShapesThin,
   PiHouseLight,
-  PiAppStoreLogo,
-  PiGooglePlayLogo,
-  PiGoogleChromeLogo,
-
 } from "react-icons/pi";
 
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import profile from '@/public/images/testimonial-03.jpg'
+
 
 
 interface ProjectLeftProps {
     title: string;
-    date: string;
-    bio: string;
     imageUrl: string;
     stack: string[];
+    download: number;
   }
 
-  export default function ProjectLeft({title, date, bio, stack, imageUrl}: ProjectLeftProps){
+  export default function ProjectLeft({title, download, stack, imageUrl}: ProjectLeftProps){
     
     return (
         <div>
@@ -42,7 +36,7 @@ interface ProjectLeftProps {
               <div className="w-full relative">
                 
               <img
-                className="w-28 h-28 rounded-full shadow "
+                className="w-28 h-28 rounded-full shadow"
                 src={imageUrl}
                 alt={"alt"}
               />
@@ -58,25 +52,7 @@ interface ProjectLeftProps {
                   🌍  www.horizondevelopers.co.za
                 </p>
   
-                <div className="flex w-full   ">
-                  <div className="flex gap-x-1  text-xs my-4">
-                    <p className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold">
-                      Flutter
-                    </p>
-                    <p className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold">
-                      GetX
-                    </p>
-                    <p className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold">
-                      Django
-                    </p>
-                    <p className=" bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold shrink-0 ">
-                      Stripe
-                    </p>
-                    <p className=" bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold shrink-0 ">
-                      PayPal
-                    </p>
-                  </div>
-                </div>
+              
               </div>
   
               <div className="flex gap-x-1 w-full h-fit">
@@ -89,12 +65,7 @@ interface ProjectLeftProps {
             </div>
   
             <div className="w-full mt-5 text-neutral-300">
-              <h2 className="font-bold my-2">Description</h2>
-              <p className="text-[12px]  font-medium my-3">
-                The world of digital design and development is constantly
-                evolving and so has my role over the last 7 years.
-              </p>
-  
+              
               <div className="mt-6 flex justify-between text-sm">
                 <div className="flex items-center gap-x-1">
                   <PiShapesThin />
@@ -104,7 +75,7 @@ interface ProjectLeftProps {
                 </div>
                 <div className="flex items-center gap-x-1">
                   <PiMagicWandThin />
-                  <span className="text-xs font-medium">32 000</span>
+                  <span className="text-xs font-medium">{download}</span>
                 </div>
               </div>
   

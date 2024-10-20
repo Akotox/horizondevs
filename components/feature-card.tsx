@@ -9,10 +9,10 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ index, title, description }) => {
   return (
     <div className="mb-3">
-      <div className="text-[14px] font-semibold text-white">
-        {index + 1}. {title}
+      <div className="text-[14px] font-bold text-white">
+        {index}. {title}
       </div>
-      <p className="text-white text-[12px] ml-5">{description}</p>
+      <p className="text-gray-300 text-[14px] ml-5">{description}</p>
     </div>
   );
 };
