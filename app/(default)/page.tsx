@@ -12,7 +12,7 @@ export const metadata = {
         url: "https://firebasestorage.googleapis.com/v0/b/electro-523c1.appspot.com/o/features.png?alt=media&token=a456925b-fa96-4996-9eef-fb554800eb17",
         width: 800,
         height: 600,
-        alt: "Description of the image",
+        alt: "Horizon developers logo",
       },
     ],
   },
@@ -25,7 +25,7 @@ export const metadata = {
   },
   canonical: "https://horizondevelopers.co.za",
   robots: "index, follow",
-  keywords: "Full-stack development, web applications, software development, Horizon Developers",
+  keywords: "flutter, golang, development, websites, software development, horizon, developers, horizon developers",
   author: "Horizon Developers",
 };
 
