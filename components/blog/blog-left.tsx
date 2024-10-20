@@ -1,10 +1,8 @@
 "use client";
 
-import {
-  PiHouseLight,
-} from "react-icons/pi";
+import { PiHouseLight, PiGithubLogoLight } from "react-icons/pi";
 
-import { motion,} from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface ProjectLeftProps {
@@ -12,7 +10,7 @@ interface ProjectLeftProps {
   email: string;
   website: string;
   date: string;
-  bio: string;
+  repo: string;
   image: string;
   stack: string[];
 }
@@ -20,7 +18,7 @@ interface ProjectLeftProps {
 export default function BlogLeft({
   author,
   date,
-  bio,
+  repo,
   stack,
   email,
   website,
@@ -60,7 +58,10 @@ export default function BlogLeft({
               <div className="flex w-full   ">
                 <div className="flex gap-x-1  text-xs my-4">
                   {stack.map((item, index) => (
-                    <p key={index} className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold">
+                    <p
+                      key={index}
+                      className="bg-[#ffffff] text-black rounded-lg px-2 h-5 flex items-center justify-center text-[11px] font-bold"
+                    >
                       {item}
                     </p>
                   ))}
@@ -77,41 +78,13 @@ export default function BlogLeft({
             </div>
           </div>
 
-          {/* <div className="w-full mt-5 text-neutral-300">
-              <h2 className="font-bold my-2">Description</h2>
-              <p className="text-[12px]  font-medium my-3">
-                The world of digital design and development is constantly
-                evolving and so has my role over the last 7 years.
-              </p>
-  
-              <div className="mt-6 flex justify-between text-sm">
-                <div className="flex items-center gap-x-1">
-                  <PiShapesThin />
-                  <span className="text-xs font-medium">
-                    Downloads
-                  </span>
-                </div>
-                <div className="flex items-center gap-x-1">
-                  <PiMagicWandThin />
-                  <span className="text-xs font-medium">32 000</span>
-                </div>
-              </div>
-  
-              <div className="border border-[#ffffff] text-neutral-300 my-6" />
-
-            <div className="flex justify-between">
-                <a href="#" aria-label="App Store" className="flex items-center justify-center w-16 h-16 rounded-full bg-white mr-4">
-                    <PiAppStoreLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Google Play" className="flex items-center justify-center w-16 h-16 rounded-full bg-white mr-4">
-                    <PiGooglePlayLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-                <a href="#" aria-label="Chrome" className="flex items-center justify-center w-16 h-16 rounded-full bg-white">
-                    <PiGoogleChromeLogo className="w-5 h-5 text-black hover:text-blue-600" />
-                </a>
-            </div>
-
-            </div> */}
+          <div className="w-full mt-5 text-neutral-300">
+           <Link href={"/"}>
+           <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium hover:bg-[#234ca5]">
+              Github Code
+            </button>
+           </Link>
+          </div>
         </div>
       </motion.div>
     </div>

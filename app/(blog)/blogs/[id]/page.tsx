@@ -96,7 +96,12 @@ export default function BlogDetails({ params }: { params: { id: string } }) {
     "related": [
         {
             "title": "Caching Strategies in Flutter",
-            "id": "related1",
+            "url": "6713b8267c241aa444180ee9",
+            "_id": "6713b8267c241aa444180ee9"
+        },
+        {
+            "title": "Flutter Firebase Phone Auth",
+            "url": "6713b8267c241aa444180ee9",
             "_id": "6713b8267c241aa444180ee9"
         }
     ],
@@ -105,10 +110,18 @@ export default function BlogDetails({ params }: { params: { id: string } }) {
     "suggestedCourses": [
         {
             "title": "Flutter Development Bootcamp",
-            "id": "course1",
             "url": "https://example.com/course/flutter-development",
-            "_id": "6713b8267c241aa444180eea"
-        }
+            "_id": "6713b8267c241aa444180eea",
+            "imageUrl": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
+        },
+
+        {
+            "title": "Flutter GetX",
+            "url": "https://example.com/course/flutter-development",
+            "_id": "6713b8267c241aa444180eea",
+            "imageUrl": "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
+        },
+
     ],
     "email": "youremail@example.com",
     "website": "https://yourwebsite.com",
@@ -123,10 +136,10 @@ const blog = Convert.toBlog(data)
     <div className="max-w-[78rem] mx-auto ">
       <div className=" gap-4 flex md:mt-5 flex-col md:flex-row  ">
         <div className="hidden lg:block lg:w-1/3">
-          <BlogLeft author={blog.author} date={formatDate(blog.date.toISOString())} bio="" stack={blog.tags} website={blog.website} email={blog.email} image={blog.image}/>
+          <BlogLeft author={blog.author} date={formatDate(blog.date.toISOString())} repo={blog.repo} stack={blog.tags} website={blog.website} email={blog.email} image={blog.image}/>
         </div>
         <BlogInfo data={blog}/>
-        <BlogRight />
+        <BlogRight related={blog.related} courses={blog.suggestedCourses}/>
       </div>
     </div>
   );

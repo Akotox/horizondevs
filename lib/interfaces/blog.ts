@@ -40,13 +40,14 @@ export enum ContentType {
     Heading = "heading",
     PG = "pg",
     Image = "image",
+    VIDEO = "video",
 }
 
 export interface Related {
     title:     string;
-    relatedID: string;
     id:        string;
     url?:      string;
+    imageUrl?: string;
 }
 
 // Converts JSON strings to/from your types
@@ -242,9 +243,9 @@ const typeMap: any = {
     ], false),
     "Related": o([
         { json: "title", js: "title", typ: "" },
-        { json: "id", js: "relatedID", typ: "" },
         { json: "_id", js: "id", typ: "" },
         { json: "url", js: "url", typ: u(undefined, "") },
+        { json: "imageUrl", js: "imageUrl", typ: u(undefined, "") },
     ], false),
     "ContentType": [
         "code",

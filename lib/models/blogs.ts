@@ -6,6 +6,7 @@ enum BlogContentType {
   HEADING = "heading",
   CODE = "code",
   PG = "pg",
+  VIDEO = "video",
 }
 
 // Define the content item interface
@@ -28,6 +29,7 @@ interface ISuggestedCourse {
   title: string; // Title of the suggested course
   id: string; // ID of the suggested course
   url: string; // URL link to the suggested course
+  imageUrl?: string; // URL link to the suggested course
 }
 
 // Define the BlogPost interface
@@ -53,7 +55,7 @@ const ContentItemSchema = new Schema<IContentItem>({
   imageUrl: { type: String, required: false },
   heading: { type: String, required: false }, // Optional heading
   lang: { type: String, required: false }, // Optional language
-  
+
 });
 
 const RelatedItemSchema = new Schema<IRelatedItem>({

@@ -3,8 +3,15 @@
 
 import { motion } from "framer-motion";
 import ArticleList from "./article-list";
+import { Related } from "@/lib/interfaces/blog";
+import Adverts from "../ui/adverts";
 
-export default function BlogRight() {
+interface SuggestionProps {
+  related: Related[];
+  courses: Related[];
+}
+
+export default function BlogRight({related, courses}: SuggestionProps) {
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -27,26 +34,30 @@ export default function BlogRight() {
             
             <div className="border border-neutral-700 my-5" />
 
-            <ArticleList />
+            <ArticleList articles={related}/>
 
               <div className="border border-neutral-700 my-5" />
           
           </div>
         </div>
 
-        <div className="bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 text-neutral-50 "><img
-                    className="h-32 w-56 object-cover rounded-lg"
-                    src={
-                      "https://images.ui8.net/uploads/full-preview-1_1725799823019.jpg"
-                    }
-                    alt={"alt"}
+        {
+          courses.length > 0 && (
+            <div>
+              {
+                courses.map((course, index) => (
+                  <Adverts
+                    key={index}
+                    imageUrl={course.imageUrl}
+                    title={course.title}
+                    buttonText="View"
+                    url={course.url}
                   />
-        
-          <p className="my-3 font-medium text-sm">3D Games in Reactjs</p>
-          <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium hover:bg-[#234ca5]">
-            Get Now @20% OFF
-          </button>
-        </div>
+                ))
+              }
+            </div>
+          )
+        }
       </div>
     </motion.div>
   );
