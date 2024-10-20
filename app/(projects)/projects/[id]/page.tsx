@@ -41,7 +41,6 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       title: title,
       description: description,
       url: `https://horizondevelopers.co.za/projects/${params.id}`, // Construct the project URL
-      type: 'technology', // Specify type as article
       images: [
         {
           url: imageUrl,
