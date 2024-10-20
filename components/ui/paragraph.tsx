@@ -3,6 +3,6 @@ interface ParagraphProps {
   }
   
   export default function Paragraph({ content }: ParagraphProps) {
-    return <p className="my-7 font-[13px]">{content}</p>;
+    return <p className="my-3 font-[13px]">{content}</p>;
   }
   

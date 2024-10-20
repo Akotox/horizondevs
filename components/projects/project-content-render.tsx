@@ -3,6 +3,7 @@ import React from 'react';// Adjust the path as needed
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
 import ImageDisplay from '../ui/image-display';
+import VideoDisplay from './video-preview';
 
 interface ContentItem {
   contentType: ContentType;
@@ -14,7 +15,7 @@ interface ContentRendererProps {
   contentItems: ContentItem[];
 }
 
-const ContentRenderer: React.FC<ContentRendererProps> = ({ contentItems }) => {
+export default function ContentRenderer ({ contentItems }: ContentRendererProps){
   return (
     <div>
       {contentItems.map((item, index) => {
@@ -26,7 +27,7 @@ const ContentRenderer: React.FC<ContentRendererProps> = ({ contentItems }) => {
           case ContentType.Image:
             return <ImageDisplay key={index} src={item.imageUrl!} />;
           case ContentType.VIDEO:
-            return <div key={index}/>; // Assuming content contains the video URL
+            return <VideoDisplay key={index} thumb={item.imageUrl!} thumbAlt={''} video={item.content!}/>; // Assuming content contains the video URL
         //   case ContentType.Code:
         //     return <CodeSnippet code={item.content.} heading={''} />; // Render code block if needed
           default:
@@ -37,4 +38,3 @@ const ContentRenderer: React.FC<ContentRendererProps> = ({ contentItems }) => {
   );
 };
 
-export default ContentRenderer;
