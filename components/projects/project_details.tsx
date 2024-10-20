@@ -8,9 +8,7 @@ import {
   PiGooglePlayLogo,
   PiGoogleChromeLogo,
 } from "react-icons/pi";
-import { motion, useAnimation } from "framer-motion";
-import profile from "../public/images/testimonial-03.jpg";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import FeatureCard from "../feature-card";
 
 export default function ProjectInfo() {

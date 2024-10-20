@@ -3,13 +3,12 @@ import connect from "@/lib/db-connection"; // Adjust the import path as needed
 import Project from "@/lib/models/projects"; // Adjust the import path as needed
 import { Types } from "mongoose";
 
-export const GET = async (request: Request) => {
-    try {
-      const { searchParams } = new URL(request.url);
-      const projectId = searchParams.get("id"); // Get the project ID from query parameters
+export const GET = async (request: Request, { params }: { params: { id: string } }) => {
+  try {
+    const { id } = params;// Get the project ID from query parameters
   
       // Validate the project ID
-      if (!projectId || !Types.ObjectId.isValid(projectId)) {
+      if (!id || !Types.ObjectId.isValid(id)) {
         return new NextResponse(
           JSON.stringify({ message: "Invalid or missing project ID" }),
           { status: 400 }
@@ -19,9 +18,9 @@ export const GET = async (request: Request) => {
       await connect();
   
       // Fetch the project by ID, selecting only the _id and thumbnail fields
-      const project = await Project.findById(projectId, { _id: 1, thumbnail: 1 });
+      const project = await Project.findById(id);
   
-      if (!project) {
+      if (!project) {id
         return new NextResponse(
           JSON.stringify({ message: "Project not found" }),
           { status: 404 }

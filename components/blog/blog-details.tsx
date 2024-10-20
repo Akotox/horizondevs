@@ -3,9 +3,8 @@
 import Link from "next/link";
 import React from "react";
 import { PiArrowLeftThin } from "react-icons/pi";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { Blog } from "@/lib/interfaces/blog";
-import { formatDate } from "@/lib/utils/date-convertor";
 import { renderContent } from "./render-blog";
 
 interface BlogInfoProps {

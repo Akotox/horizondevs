@@ -6,6 +6,7 @@ enum ProjectContentType {
   HEADING = "heading",
   CODE = "code",
   PG = "pg",
+  VIDEO = "video",
 }
 
 // Define the Feature interface
@@ -28,6 +29,7 @@ interface IThumbnail {
   width: number; // Width of the thumbnail
   alt: string; // Alt text for the thumbnail
   projectType: string; // Type of the project (e.g., Web App)
+  projectID?: string; // Type of the project (e.g., Web App)
 }
 
 // Define the Project interface
@@ -73,6 +75,7 @@ const ThumbnailSchema = new Schema<IThumbnail>({
   width: { type: Number, required: true },
   alt: { type: String, required: true },
   projectType: { type: String, required: true },
+  projectID: { type: String, required: false },
 });
 
 // Create the Project schema

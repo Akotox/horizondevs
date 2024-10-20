@@ -17,13 +17,14 @@ import profile from '@/public/images/testimonial-03.jpg'
 
 
 interface ProjectLeftProps {
-    author: string;
+    title: string;
     date: string;
     bio: string;
-    stack: string;
+    imageUrl: string;
+    stack: string[];
   }
 
-  export default function ProjectLeft({author, date, bio, stack}: ProjectLeftProps){
+  export default function ProjectLeft({title, date, bio, stack, imageUrl}: ProjectLeftProps){
     
     return (
         <div>
@@ -40,16 +41,14 @@ interface ProjectLeftProps {
             <div className="flex">
               <div className="w-full relative">
                 
-                <Image
-                  width={1000}
-                  height={1000}
-                  className="w-28 h-28 rounded-full object-cover"
-                  src={profile}
-                  alt=""
-                />
+              <img
+                className="w-28 h-28 rounded-full shadow "
+                src={imageUrl}
+                alt={"alt"}
+              />
                 
                 <h1 className="font-bold text-xl  text-neutral-300 mt-3">
-                  {author}
+                  {title}
                 </h1>
                 <p className="text-xs font-medium text-neutral-300 mt-2">
                 📧  info@horizondevelopers.co.za 

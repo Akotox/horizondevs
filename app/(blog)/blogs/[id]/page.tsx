@@ -1,9 +1,6 @@
 import BlogInfo from "@/components/blog/blog-details";
 import BlogLeft from "@/components/blog/blog-left";
 import BlogRight from "@/components/blog/blog-right";
-import { Convert } from "@/lib/interfaces/blog";
-import { formatDate } from "@/lib/utils/date-convertor";
-
 import { Blog } from "@/lib/interfaces/blog";
 
 import { notFound } from 'next/navigation'
