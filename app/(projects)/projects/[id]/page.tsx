@@ -16,6 +16,49 @@ async function getProject(id: string) {
   return project
 }
 
+export async function generateStaticParams() {
+  let projects = await fetch('https://horizondevelopers.co.za/api/projects').then((res) =>
+    res.json()
+  )
+ 
+  return projects.map((project: Project) => ({
+    id: project.id,
+  }))
+}
+ 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  let project = await getProject(params.id);
+  
+  const thumbnail = project.thumbnail; 
+  const title = project.title; 
+  const description = project.description;
+  const imageUrl = thumbnail.url; 
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: `https://horizondevelopers.co.za/projects/${params.id}`, // Construct the project URL
+      type: 'technology', // Specify type as article
+      images: [
+        {
+          url: imageUrl,
+          alt: thumbnail.alt, // Alt text for the image
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image', // Use large image card for Twitter
+      title: title,
+      description: description,
+      image: imageUrl,
+    },
+  };
+}
+
+
 export default async function ProjectDetails({ params }: { params: { id: string } }) {
   let project = await getProject(params.id)
   return (
