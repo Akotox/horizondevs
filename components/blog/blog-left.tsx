@@ -1,6 +1,6 @@
 "use client";
 
-import { PiHouseLight, PiGithubLogoLight } from "react-icons/pi";
+import { PiHouseLight } from "react-icons/pi";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
