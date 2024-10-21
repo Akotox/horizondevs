@@ -1,3 +1,11 @@
+
+
+
+import BlogListLeft from "@/components/blog-list/bloglist-left";
+import BlogsList from "@/components/blog-list/blog-list";
+import BlogListRight from "@/components/blog-list/bloglist-right";
+import { blogs } from "@/lib/data/constant_data";
+
 export const metadata = {
   title: "Horizon Developers Blog",
   description: "Explore the latest insights and trends in full-stack web development, software solutions, and technology. Join Horizon Developers as we share tips, tutorials, and best practices for building efficient web applications.",
@@ -29,30 +37,7 @@ export const metadata = {
   author: "Horizon Developers",
 };
 
-
-import { notFound } from "next/navigation";
-import { BlogList, Convert } from "@/lib/interfaces/blog-list";
-import BlogListLeft from "@/components/blog-list/bloglist-left";
-import BlogsList from "@/components/blog-list/blog-list";
-import BlogListRight from "@/components/blog-list/bloglist-right";
-
-
-async function getBlogs() {
-  let res = await fetch(`https://horizondevelopers.co.za/api/blogs/all`);
-
-  const blogs: BlogList[] = await res.json();
-
-  
-  if (!blogs || blogs.length === 0) {
-    notFound(); // Handle the case where no blogs are found
-  }
-
-  return blogs;
-}
-
-
-export default async function Blogs() {
-  let blogs = await getBlogs();
+export default function Blogs() {
   return (
     <div className="max-w-[78rem] mx-auto ">
       <div className=" gap-4 flex md:mt-5    flex-col md:flex-row  ">
