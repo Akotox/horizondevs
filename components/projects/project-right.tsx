@@ -2,12 +2,23 @@
 import React from "react";
 import { PiGithubLogoLight } from "react-icons/pi";
 import { SiCss3, SiFramer } from "react-icons/si";
-
-// import TestimonialTooltip from "@/app/TestimonialTooltip/page";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ProjectRight() {
+interface Adverts {
+  image: string;
+  link: string;
+  text: string;
+}
+interface ProjectRightProps {
+  appLogo: string;
+  relatedApps: Adverts[];
+  adverts: Adverts[];
+  testAppLink: string;
+}
+
+export default function ProjectRight({appLogo, adverts, relatedApps, testAppLink}: ProjectRightProps) {
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -32,9 +43,11 @@ export default function ProjectRight() {
               its features today! <br />
               Get started with just one click below.
             </p>
+            <Link href={testAppLink}>
             <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-medium text-neutral-50 hover:bg-[#234ca5] hover:text-white">
               Download
             </button>
+            </Link>
 
             <div className="border border-neutral-700 my-5" />
 

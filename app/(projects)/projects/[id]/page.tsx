@@ -4,6 +4,7 @@ import ProjectRight from "@/components/projects/project-right";
 import ProjectInfo from "@/components/projects/project_details";
 
 import { Project } from "@/lib/interfaces/projects";
+import formatTitle from "@/lib/utils/title-formatter";
 
 import { notFound } from 'next/navigation'
  
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     openGraph: {
       title: title,
       description: description,
-      url: `https://horizondevelopers.co.za/projects/${params.id}`, // Construct the project URL
+      url: `https://horizondevelopers.co.za/projects/${params.id}/${formatTitle(title)}`, // Construct the project URL
       images: [
         {
           url: imageUrl,
@@ -69,7 +70,7 @@ export default async function ProjectDetails({ params }: { params: { id: string 
         </div>
 
         <ProjectInfo data={project}/>
-        <ProjectRight />
+        <ProjectRight appLogo={project.appLogo} relatedApps={[]} adverts={[]} testAppLink={project.testAppLink} />
       </div>
     </div>
   );

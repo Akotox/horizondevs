@@ -19,7 +19,7 @@ interface Blog {
 }
 
 async function getBlogs() {
-  let res = await fetch(`${BASEURL}/api/blogs/all`);
+  let res = await fetch(`https://horizondevelopers.co.za/api/blogs/all`);
   const blogs: Blog[] = await res.json();
 
   if (!blogs || blogs.length === 0) {
