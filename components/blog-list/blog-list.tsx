@@ -6,13 +6,23 @@ import { motion } from "framer-motion";
 import Cta from "@/components/cta";
 import BlogTile from "@/components/blog/blog-tile";
 import { notFound } from "next/navigation";
-import { BlogList, Convert } from "@/lib/interfaces/blog-list";
+// import { BlogList, Convert } from "@/lib/interfaces/blog-list";
+
+interface BlogList {
+  id:        string;
+  title:     string;
+  author:    string;
+  tags:      string[];
+  image:     string;
+  headlines: string;
+  date:      string;
+}
 
 interface BlogListProps {
     data: BlogList[]
 }
 
-export default async function BlogsList({data}: BlogListProps) {
+export default function BlogsList({data}: BlogListProps) {
 //   const blogs: BlogList[] = await getBlogs(); 
   
   const blogs: BlogList[] = [
