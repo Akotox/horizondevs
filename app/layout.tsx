@@ -2,7 +2,13 @@ import "./css/style.css";
 
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import Header from "@/components/ui/header";
 
 const inter = Inter({
@@ -49,7 +55,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <ClerkProvider>
+         <html lang="en">
       <body
         className={`${inter.variable} ${nacelle.variable} bg-gray-950 font-inter text-base text-gray-200 antialiased`}
       >
@@ -58,5 +65,7 @@ export default function RootLayout({
         </div>
       </body>
     </html>
+    </ClerkProvider>
+   
   );
 }
