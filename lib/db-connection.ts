@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 
-const MONGO_URL = process.env.MONGO_URL;
-const DB_NAME = process.env.DB_NAME;
-
 const connect = async () => {
   const connectionState = mongoose.connection.readyState;
 
@@ -17,8 +14,8 @@ const connect = async () => {
   }
 
   try {
-    mongoose.connect(MONGO_URL!, {
-      dbName: DB_NAME,
+    mongoose.connect(process.env.MONGO_URL!, {
+      dbName: process.env.DB_NAME!,
       bufferCommands: true,
     });
     console.log("Connected");
