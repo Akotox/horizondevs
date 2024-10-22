@@ -6,8 +6,9 @@ import { Blog } from "@/lib/interfaces/blog";
 import { notFound } from 'next/navigation'
  
 async function getBlog(id: string) {
+  // let data = await fetch('https://api.vercel.app/blog', { cache: 'no-store' })
   try {
-    let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`);
+    let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`, { cache: 'no-store' });
     if (!res.ok) {
       notFound(); // Handle 404 responses
     }
@@ -20,46 +21,46 @@ async function getBlog(id: string) {
   }
 }
  
-export async function generateStaticParams() {
-  try {
-    let res = await fetch('https://horizondevelopers.co.za/api/blogs/all');
-    if (!res.ok) throw new Error('Failed to fetch posts');
-    let posts = await res.json();
+// export async function generateStaticParams() {
+//   try {
+//     let res = await fetch('https://horizondevelopers.co.za/api/blogs/all');
+//     if (!res.ok) throw new Error('Failed to fetch posts');
+//     let posts = await res.json();
 
-    return posts.map((post: Blog) => ({
-      id: post.id,
-    }));
-  } catch (error) {
-    console.error("Error generating static params:", error);
-    return []; // Return an empty array to avoid crashes
-  }
-}
+//     return posts.map((post: Blog) => ({
+//       id: post.id,
+//     }));
+//   } catch (error) {
+//     console.error("Error generating static params:", error);
+//     return []; // Return an empty array to avoid crashes
+//   }
+// }
 
  
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  let post = await getBlog(params.id);
+// export async function generateMetadata({ params }: { params: { id: string } }) {
+//   let post = await getBlog(params.id);
 
-  return {
-    title: post.title || 'Default Title',
-    description: post.headlines || 'Default description',
-    keywords: post.tags ? post.tags.join(', ') : '',
-    author: post.author || 'Unknown',
-    image: post.image || 'default-image.jpg',
-    publishDate: post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
-    openGraph: {
-      title: post.title || 'Default Title',
-      description: post.headlines || 'Default description',
-      url: `https://horizondevelopers.co.za/blogs/${post.id}`,
-      image: post.image || 'default-image.jpg',
-    },
-    twitter: {
-      cardType: 'summary_large_image',
-      title: post.title || 'Default Title',
-      description: post.headlines || 'Default description',
-      image: post.image || 'default-image.jpg',
-    },
-  };
-}
+//   return {
+//     title: post.title || 'Default Title',
+//     description: post.headlines || 'Default description',
+//     keywords: post.tags ? post.tags.join(', ') : '',
+//     author: post.author || 'Unknown',
+//     image: post.image || 'default-image.jpg',
+//     publishDate: post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
+//     openGraph: {
+//       title: post.title || 'Default Title',
+//       description: post.headlines || 'Default description',
+//       url: `https://horizondevelopers.co.za/blogs/${post.id}`,
+//       image: post.image || 'default-image.jpg',
+//     },
+//     twitter: {
+//       cardType: 'summary_large_image',
+//       title: post.title || 'Default Title',
+//       description: post.headlines || 'Default description',
+//       image: post.image || 'default-image.jpg',
+//     },
+//   };
+// }
 
 
 export default async function BlogDetails({ params }: { params: { id: string } }) {

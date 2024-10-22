@@ -1,3 +1,5 @@
+
+
 export const metadata = {
   title: "Horizon Developers",
   description: "Horizon Developers: Specializing in full-stack web development and custom software solutions, we create efficient, user-friendly web applications tailored to your needs. Partner with us to turn your ideas into reality!",
@@ -29,7 +31,6 @@ export const metadata = {
   author: "Horizon Developers",
 };
 
-
 import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
 import Workflows from "@/components/workflows";
@@ -37,6 +38,7 @@ import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
 import ContactUs from "@/components/contactus";
+
 
 export default function Home() {
   return (
