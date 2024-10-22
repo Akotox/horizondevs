@@ -5,48 +5,60 @@ import { Blog } from "@/lib/interfaces/blog";
 
 import { notFound } from 'next/navigation'
  
-
- 
 async function getBlog(id: string) {
-  let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`)
-  let post: Blog = await res.json()
-  if (!post) notFound()
-  return post
+  try {
+    let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`);
+    if (!res.ok) {
+      notFound(); // Handle 404 responses
+    }
+    let post: Blog = await res.json();
+    if (!post) notFound(); // Check if post is falsy
+    return post;
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    notFound(); // Handle other errors gracefully
+  }
 }
  
 export async function generateStaticParams() {
-  let posts = await fetch('https://horizondevelopers.co.za/api/blogs/all').then((res) =>
-    res.json()
-  )
- 
-  return posts.map((post: Blog) => ({
-    id: post.id,
-  }))
+  try {
+    let res = await fetch('https://horizondevelopers.co.za/api/blogs/all');
+    if (!res.ok) throw new Error('Failed to fetch posts');
+    let posts = await res.json();
+
+    return posts.map((post: Blog) => ({
+      id: post.id,
+    }));
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return []; // Return an empty array to avoid crashes
+  }
 }
+
  
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  let post = await getBlog(params.id)
- 
+  let post = await getBlog(params.id);
+
   return {
-    title: post.title,
-    description: post.headlines, // Use the headlines as a description
-    keywords: post.tags.join(', '), // Join tags for keywords
-    author: post.author,
-    image: post.image,
-    publishDate: new Date(post.date).toISOString(),
+    title: post.title || 'Default Title',
+    description: post.headlines || 'Default description',
+    keywords: post.tags ? post.tags.join(', ') : '',
+    author: post.author || 'Unknown',
+    image: post.image || 'default-image.jpg',
+    publishDate: post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
     openGraph: {
-      title: post.title,
-      description: post.headlines,
-      url: `https://horizondevelopers.co.za/blog/${post.id}`, // Assuming this is your blog URL structure
-      image: post.image,
+      title: post.title || 'Default Title',
+      description: post.headlines || 'Default description',
+      url: `https://horizondevelopers.co.za/blogs/${post.id}`,
+      image: post.image || 'default-image.jpg',
     },
     twitter: {
       cardType: 'summary_large_image',
-      title: post.title,
-      description: post.headlines,
-      image: post.image,
-    }
-  }
+      title: post.title || 'Default Title',
+      description: post.headlines || 'Default description',
+      image: post.image || 'default-image.jpg',
+    },
+  };
 }
 
 
