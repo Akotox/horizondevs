@@ -8,7 +8,7 @@ export const GET = async (request: Request) => {
     await connect();
 
     // Retrieve all blog posts with specific fields
-    const blogPosts = await BlogPost.find();
+    const blogPosts = (await BlogPost.find({}, {id:1, title: 1, author:1, tags: 1, headlines: 1, date: 1}));
 
     return new NextResponse(
       JSON.stringify(blogPosts),
