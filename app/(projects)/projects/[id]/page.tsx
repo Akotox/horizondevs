@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     openGraph: {
       title: title,
       description: description,
-      url: `https://horizondevelopers.co.za/projects/${params.id}/${formatTitle(title)}`, // Construct the project URL
+      url: `https://horizondevelopers.co.za/projects/${params.id}}`, // Construct the project URL
       images: [
         {
           url: imageUrl,

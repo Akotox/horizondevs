@@ -1,6 +1,7 @@
 import BlogInfo from "@/components/blog/blog-details";
 import BlogLeft from "@/components/blog/blog-left";
 import BlogRight from "@/components/blog/blog-right";
+import { blogs } from "@/lib/data/constant_data";
 import { Blog } from "@/lib/interfaces/blog";
 
 import { notFound } from 'next/navigation'
@@ -8,7 +9,7 @@ import { notFound } from 'next/navigation'
 async function getBlog(id: string) {
   // let data = await fetch('https://api.vercel.app/blog', { cache: 'no-store' })
   try {
-    let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`, { cache: 'no-store' });
+    let res = await fetch(`https://horizondevelopers.co.za/api/blogs/${id}`);
     if (!res.ok) {
       notFound(); // Handle 404 responses
     }
@@ -22,21 +23,43 @@ async function getBlog(id: string) {
 }
  
 export async function generateStaticParams() {
-  let posts = await fetch('https://api.vercel.app/blog').then((res) =>
-    res.json()
-  )
- 
-  return posts.map((post: Blog) => ({
+  return  blogs.map((post) => ({
     id: post.id,
-  }))
+  }));
 }
  
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  let post = await getBlog(params.id)
- 
-  return {
-    title: post.title,
+  const post = blogs.find((p) => p.id === params.id); // Find the post by id
+  
+  if (!post) {
+    return { title: 'Post Not Found' }; // Fallback for not found post
   }
+
+  const title = post.title; 
+  const description = post.headlines;
+  const imageUrl = post.image; 
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: `https://horizondevelopers.co.za/projects/${params.id}}`, // Construct the project URL
+      images: [
+        {
+          url: imageUrl,
+          alt: "image", // Alt text for the image
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image', // Use large image card for Twitter
+      title: title,
+      description: description,
+      image: imageUrl,
+    },
+  };
 }
 
 
